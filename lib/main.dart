@@ -18,6 +18,36 @@ class _QuoteListState extends State<QuoteList> {
     Quote(author: 'adam', text: 'this is Adams quote'),
   ];
 
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              quote.text,
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.grey[600],
+              ),
+            ),
+            SizedBox(height: 6.0),
+            Text(
+              '-${quote.author}',
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.grey[800],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +58,7 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        // children: quotes.map((quote) {
-        //   return Text(quote);
-        // }).toList(),
-        //in one line using arrow function
-        children: quotes
-            .map((quote) => Text('${quote.author} - ${quote.text}'))
-            .toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }
