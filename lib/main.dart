@@ -15,40 +15,37 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              RaisedButton(
-                padding: const EdgeInsets.all(8.0),
-                textColor: Colors.white,
-                color: Colors.blue,
-                onPressed: () {},
-                child: new Text("Add"),
-              ),
-              Icon(
-                Icons.favorite,
-                color: Colors.pink,
-                size: 24.0,
-                semanticLabel: 'Text to announce in accessibility modes',
-              ),
-            ],
+      body: Row(
+        children: [
+          Expanded(
+            flex: 3,
+            child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Image.asset('assets/sample-2.jpg')),
           ),
-          Container(
-            padding: EdgeInsets.all(20.0),
-            child: Text('First'),
-            color: Colors.red,
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              child: Text('1'),
+              color: Colors.cyan,
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            child: Text('Second'),
-            color: Colors.blue,
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              child: Text('2'),
+              color: Colors.pink,
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(40.0),
-            child: Text('Third'),
-            color: Colors.green,
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              child: Text('3'),
+              color: Colors.amber,
+            ),
           ),
         ],
       ),
