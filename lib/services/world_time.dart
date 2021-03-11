@@ -10,6 +10,13 @@ class WorldTime {
   WorldTime({this.location, this.flag, this.url});
 
   Future<void> getTime() async {
+    // try and catch can be used for error handling
+    try {
+      print('inside try');
+    } catch (e) {
+      print('Error is :');
+    }
+
     var apiEndPoint = Uri.https('worldtimeapi.org', '/api/timezone/$url');
 
     // Await the http get response, then decode the json-formatted response.
@@ -29,6 +36,7 @@ class WorldTime {
       //set time proparty
       time = now.toString();
     } else {
+      time = 'Could not load data';
       print('Request failed with status: ${response.statusCode}.');
     }
   }
