@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
       body: SafeArea(
         child: Column(
           children: [
-            FlatButton.icon(
+            TextButton.icon(
               onPressed: () {
                 Navigator.pushNamed(context, '/location');
               },
