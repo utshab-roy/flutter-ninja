@@ -5,6 +5,7 @@ import 'package:flutter_ninja/pages/choose_location.dart';
 
 void main() {
   runApp(MaterialApp(
+    title: 'World Time App',
     initialRoute: '/',
     routes: {
       '/': (context) => Loading(),

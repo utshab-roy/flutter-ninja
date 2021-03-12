@@ -33,9 +33,11 @@ class _LoadingState extends State<Loading> {
 
     await instance.getTime();
 
-    //updateing the time variable from the api call
-    setState(() {
-      time = instance.time;
+    // passing data from this route to /home route using arguments
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'location': instance.location,
+      'flag': instance.flag,
+      'time': instance.time,
     });
   }
 }
