@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
+import 'package:intl/intl.dart';
 
 class WorldTime {
   String location; //location name for the UI
@@ -34,7 +35,8 @@ class WorldTime {
 
       //converting DateTime object to String
       //set time proparty
-      time = now.toString();
+      // time = now.toString();
+      time = DateFormat.jm().format(now);
     } else {
       time = 'Could not load data';
       print('Request failed with status: ${response.statusCode}.');
