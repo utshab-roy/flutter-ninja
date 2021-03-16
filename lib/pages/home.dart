@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // receiving data from location route
-    data = ModalRoute.of(context).settings.arguments;
+    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     // printing out the route data
     print(data);
 
@@ -35,8 +35,18 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 TextButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/location');
+                  onPressed: () async {
+                    dynamic results =
+                        await Navigator.pushNamed(context, '/location');
+                    //updating the data with new value
+                    setState(() {
+                      data = {
+                        'time': results['time'],
+                        'location': results['location'],
+                        'isDaytime': results['isDaytime'],
+                        'flag': results['flag'],
+                      };
+                    });
                   },
                   icon: Icon(
                     Icons.edit_location,

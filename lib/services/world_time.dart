@@ -13,12 +13,6 @@ class WorldTime {
 
   Future<void> getTime() async {
     // try and catch can be used for error handling
-    try {
-      print('inside try');
-    } catch (e) {
-      print('Error is :');
-    }
-
     var apiEndPoint = Uri.https('worldtimeapi.org', '/api/timezone/$url');
 
     // Await the http get response, then decode the json-formatted response.
