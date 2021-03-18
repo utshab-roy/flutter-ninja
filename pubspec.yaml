@@ -64,6 +64,14 @@ flutter:
     - family: IndieFlower
       fonts:
         - asset: fonts/IndieFlower-Regular.ttf
+    - family: Raleway
+      fonts:
+        - asset: fonts/Raleway-Regular.ttf
+        - asset: fonts/Raleway-bold.ttf
+          weight: 700
+        - asset: fonts/Raleway-LightItalic.ttf
+          weight: 300
+          style: italic
 
   #
   # For details regarding fonts from package dependencies,

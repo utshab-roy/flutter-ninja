@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ninja/app_screens/first_screen.dart';
+import 'package:flutter_ninja/app_screens/home.dart';
 
-void main() => runApp(MyFlutterApp());
-
-class MyFlutterApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return FirstScreen();
-  }
-}
+void main() => runApp(MaterialApp(
+  title: "Exploring UI Widget",
+  home: Home(),
+));
