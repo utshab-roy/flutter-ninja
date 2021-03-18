@@ -7,7 +7,7 @@ class Home extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.only(
           left: 10.0,
-          top: 40.0,
+          top: 50.0,
         ),
         alignment: Alignment.center,
         color: Colors.deepPurple,
@@ -82,9 +82,42 @@ class Home extends StatelessWidget {
               width: 100.0,
               height: 100.0,
             ),
+            SizedBox(height: 20.0),
+            FlightBookingButton(),
           ],
         ),
       ),
     );
+  }
+}
+
+class FlightBookingButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: MaterialButton(
+        color: Colors.red[600],
+        child: new Text(
+          'Book Your Flight',
+          style: new TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+            fontFamily: 'Raleway',
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        onPressed: () => bookFlight(context),
+      ),
+    );
+  }
+
+  void bookFlight(BuildContext context) {
+    var alertDialouge = AlertDialog(
+      title: Text('Flight Booked Successfully'),
+      content: Text('Have a safe flight !'),
+    );
+
+    showDialog(
+        context: context, builder: (BuildContext context) => alertDialouge);
   }
 }
